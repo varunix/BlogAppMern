@@ -14,6 +14,7 @@ export default () => {
     });
 
     setTitle('');
+    window.location.reload();
   };
 
   return (
