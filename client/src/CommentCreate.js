@@ -18,7 +18,7 @@ export default ({ postId }) => {
         <div>
             <form onSubmit={onSubmit}>
                 <div className='form-group'>
-                    <label>New Comment</label>
+                    <label style={{ marginBottom: '10px' }}>New Comment</label>
                     <input value={content} onChange={e => setContent(e.target.value)} className='form-control' />
                 </div>
                 <br />

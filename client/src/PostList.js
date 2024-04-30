@@ -7,7 +7,7 @@ export default () => {
   const [posts, setPosts] = useState({});
 
   const fetchPost = async () => {
-    const res = await axios.get("http://localhost:4000/posts");
+    const res = await axios.get("http://localhost:4002/posts");
 
     setPosts(res.data);
   };
@@ -17,6 +17,7 @@ export default () => {
   }, []);
 
   const renderedPost = Object.values(posts).map((post) => {
+    console.log(post);
     return (
       <div
         className="card"
@@ -25,7 +26,7 @@ export default () => {
       >
         <div className="card-body">
             <h3>{post.title}</h3>
-            <CommentList postId={post.id} />
+            <CommentList comments={post.comments} />
             <CommentCreate postId={post.id} />
         </div>
       </div>
